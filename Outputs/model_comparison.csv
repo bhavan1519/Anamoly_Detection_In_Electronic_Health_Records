@@ -1,0 +1,5 @@
+Model,Accuracy,Precision,Recall,F1
+IsolationForest,0.915,0.0,0.0,0.0
+RandomForest,0.955,0.0,0.0,0.0
+XGBoost,0.95,0.0,0.0,0.0
+Autoencoder,0.925,0.125,0.1111111111111111,0.11764705882352941
