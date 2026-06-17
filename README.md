@@ -1,61 +1,39 @@
-# EHR Anomaly Detection
+# Anomaly Detection in Electronic Health Records
 
-This project demonstrates anomaly detection in electronic health record (EHR) access logs using Python and machine learning.
+Project for detecting anomalies in electronic health records (EHR) using machine learning methods.
 
-## Contents
+## Description
 
-- `EHR_Anamoly_Detection.ipynb` - Jupyter notebook with the full analysis and modeling pipeline.
-- `dataset.csv` - Synthetic dataset used for model training and evaluation.
+This repository contains a notebook and datasets used to explore and build anomaly detection models for EHR data. The primary workflow is implemented in `EHR_Anamoly_Detection.ipynb` which loads the preprocessed data, trains models, and produces output reports.
 
-## Project Overview
-
-The notebook performs:
-
-1. Library installation and imports
-2. Dataset loading and basic cleaning
-3. Column normalization and target identification
-4. Binary encoding of sensitive access fields
-5. Feature engineering for session behavior, access counts, and login patterns
-6. Numeric encoding, scaling, and train/test splitting
-7. Model training and comparison using:
-   - Isolation Forest
-   - Random Forest
-   - XGBoost
-   - Autoencoder
-8. Evaluation with accuracy, precision, recall, F1 score, and confusion matrices
-9. Model comparison reporting and visualization of results
-10. Feature importance analysis
+## Files
+- `dataset.csv` - Raw dataset (source data).
+- `preprocessed_dataset.csv` - Cleaned/preprocessed data used for modeling.
+- `EHR_Anamoly_Detection.ipynb` - Main analysis notebook (exploration, feature engineering, modeling).
+- `Outputs/feature_importance.csv` - Feature importance results.
+- `Outputs/model_comparison.csv` - Model comparison metrics.
 
 ## Requirements
 
-The notebook installs the following Python libraries:
+Install the usual data science packages (tested with Python 3.8+):
 
-- `pandas`
-- `numpy`
-- `matplotlib`
-- `seaborn`
-- `scikit-learn`
-- `xgboost`
-- `tensorflow`
+```
+pip install -r requirements.txt
+# or at minimum:
+pip install pandas numpy scikit-learn matplotlib seaborn
+```
+
+If you prefer, create a virtual environment first.
 
 ## Usage
 
-1. Open `EHR_Anamoly_Detection.ipynb` in a Jupyter environment or Google Colab.
-2. Upload `dataset.csv` when prompted.
-3. Run the notebook cells sequentially to process the data, train models, and generate results.
+Open and run the notebook `EHR_Anamoly_Detection.ipynb` to reproduce the analysis and regenerate outputs in the `Outputs/` folder.
 
 ## Notes
 
-- The notebook is configured for interactive use and includes Google Colab integration for file upload/download.
-- It uses a target label mapping for anomaly labels such as `normal` and `suspicious`.
-- The dataset is expected to contain EHR access event features such as login counts, session duration, access counts, and sensitive record access indicators.
+- The notebook reads `preprocessed_dataset.csv`; ensure it exists in the project root.
+- If you want a `requirements.txt`, tell me and I will generate one from the environment.
 
-## Output Files
+## License
 
-The notebook saves several outputs when executed:
-
-- `preprocessed_dataset.csv`
-- `all_model_comparison.csv`
-- `all_model_comparison.png`
-- `feature_importance.csv`
-- `feature_importance_graph.png`
+Add a license if you plan to share this project publicly.
